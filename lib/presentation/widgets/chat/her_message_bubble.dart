@@ -39,7 +39,7 @@ class _ImageBubble extends StatelessWidget {
     return ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.network(
-          'https://yesno.wtf/assets/no/20-56c4b19517aa69c8f7081939198341a4.gif',
+          'https://64.media.tumblr.com/b003574e42c7e7d2bbf5272fe19022ad/50baf38c6eb87641-9f/s540x810/3eca26005d487d47ff49a03699e00a3a34355db9.gif',
           width: size.width * 0.7,
           height: 150,
           fit: BoxFit.cover,
@@ -50,7 +50,7 @@ class _ImageBubble extends StatelessWidget {
               width: size.width * 0.7,
               height: 150,
               padding: const EdgeInsets.symmetric( horizontal: 10, vertical: 5),
-              child: const Text('Mi amor está enviando una imagen'),
+              child: const Text('Mi corazón de melón está enviando una imagen'),
             );
           },
         ));
