@@ -1,7 +1,7 @@
 name: yes_no_app
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
+# pub.dev using flutter pub publish. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
@@ -23,10 +23,10 @@ environment:
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# consider running flutter pub upgrade --major-versions. Alternatively,
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
+# versions available, run flutter pub outdated.
 dependencies:
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
@@ -39,6 +39,16 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+
+  flutter_launcher_icons: ^0.10.0  # Asegúrate de usar la versión más reciente
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"  # La ruta del ícono que deseas usar
+  remove_alpha_ios: true # Elimina el canal alfa para iOS
+
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
@@ -49,7 +59,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/icon/icon.png
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
