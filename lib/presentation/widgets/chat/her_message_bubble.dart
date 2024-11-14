@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/domain/entities/message.dart';
 
 class HerMessageBubble extends StatelessWidget {
-  const HerMessageBubble({super.key});
+  final Message message;
+
+  const HerMessageBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -13,18 +16,16 @@ class HerMessageBubble extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               color: colors.secondary, borderRadius: BorderRadius.circular(20)),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              'Hola ❤',
-              style: TextStyle(color: Colors.white),
+              message.text,
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         ),
         const SizedBox(height: 5),
-
-        _ImageBubble(),
-
+        _ImageBubble( message.imageUrl! ),
         const SizedBox(height: 10),
       ],
     );
@@ -32,6 +33,10 @@ class HerMessageBubble extends StatelessWidget {
 }
 
 class _ImageBubble extends StatelessWidget {
+  final String imageUrl;
+
+  const _ImageBubble( this.imageUrl );
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -39,7 +44,7 @@ class _ImageBubble extends StatelessWidget {
     return ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.network(
-          'https://64.media.tumblr.com/b003574e42c7e7d2bbf5272fe19022ad/50baf38c6eb87641-9f/s540x810/3eca26005d487d47ff49a03699e00a3a34355db9.gif',
+          imageUrl,
           width: size.width * 0.7,
           height: 150,
           fit: BoxFit.cover,
@@ -49,8 +54,8 @@ class _ImageBubble extends StatelessWidget {
             return Container(
               width: size.width * 0.7,
               height: 150,
-              padding: const EdgeInsets.symmetric( horizontal: 10, vertical: 5),
-              child: const Text('Mi corazón de melón está enviando una imagen'),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              child: const Text('Janeth está enviando una imagen'),
             );
           },
         ));
