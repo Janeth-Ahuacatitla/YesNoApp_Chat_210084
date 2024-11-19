@@ -16,21 +16,22 @@ Esta plataforma de mensajería permite a los usuarios comunicarse de manera senc
 De la misma manera permite enviar y recibir texto en tiempo real con un  diseño minimalista y atractivo, con burbujas de diálogo y una interfaz familiar, misma que incluye la opción de finalizar la conversación con un comando específico "?".
 
 ### CÓDIGO
-import 'package:flutter/material.dart';
-import 'package:yes_no_app/domain/entities/message.dart';
 
-class MyMessageBubble extends StatelessWidget {
-  final Message message;
+    import 'package:flutter/material.dart';
+    import 'package:yes_no_app/domain/entities/message.dart';
 
-  const MyMessageBubble({
+    class MyMessageBubble extends StatelessWidget {
+    final Message message;
+
+    const MyMessageBubble({
     super.key, 
     required this.message
-  });
+    });
 
-  @override
-  Widget build(BuildContext context) {
+    @override
+    Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-
+    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
@@ -48,8 +49,8 @@ class MyMessageBubble extends StatelessWidget {
         const SizedBox(height: 5)
       ],
     );
-  }
-}
+    }
+    }
 
 
 ![Captura de pantalla 2024-11-19 092915](https://github.com/user-attachments/assets/dc602e45-9367-4551-ac63-7df1bdd40e80)
